@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#carousel').slick({
+    $('#carousel-imagens').slick({
         autoplay: true,
         arrows: false
     })
