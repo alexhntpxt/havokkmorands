@@ -22,33 +22,38 @@ $('#cep').mask('00000-000', {
 $('form').validate({
     rules: {
         nome: {
-            requerido: true
+            required: true
         },
         email: {
-            requerido: true,
+            required: true,
             email: true
         },
         telefone: {
-            requerido: true
+            required: true
         },
         endereco: {
-            requerido: true
+            required: true
         },
         cep: {
-            requerido: true
+            required: true
         },
         cpf: {
-            requerido: true
-        },
+            required: true
+        }
     },
-    submitHandler: function (form) {
+    messages:  {
+        nome: 'Por favor, insira seu nome'
+    },
+    submitHandler: function(form) {
+        
         console.log(form);
         
     },
-    invalidHandler: function (event, validator) {
-        let camposIncorretos = validator.numberOfInvalids();
+    invalidHandler: function(evento, validador) {
+        let camposIncorretos = validador.numberOfInvalids();
         if (camposIncorretos) {
-        alert("Por favor, preencha os campos para prosseguir com a compra!");
+            alert (`Existem ${camposIncorretos} campos incorretos`)
+        }
     }
-}
+    
 })
